@@ -96,11 +96,16 @@ conversion_data = """1 tsp = 1 teaspoon
 1 cup = 8 fluid_ounce
 32 fluid_ounce = 1 quart
 4 quart = 1 gallon
+1 day = 24 hour
+1 hour = 60 min
+1 min = 60 second
+2.2 lb = 1 kg
+1000 g = 1 kg
 """
 
 if __name__ == "__main__":
-    origin_values = ['1/64 cups','1 gallon','1 tsp','2 pints']
-    target_units = ['tablespoons','tsp','quart','fluid_ounce']
+    origin_values = ['1/64 cups','1 gallon','0.397 lb','1 day']
+    target_units = ['tablespoons','tsp','g','seconds']
     for i,origin_value in enumerate(origin_values):
         results = convert_units(origin_value,target_units[i],conversion_data)
         sentence = 'are equal to' if origin_value[-1] == 's' else 'is equal to'
